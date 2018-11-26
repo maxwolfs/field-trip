@@ -1,5 +1,19 @@
 # MASTER THESIS
 
+* https://medium.com/@memoakten/data-dramatization-fe04a57530e4
+* https://www.youtube.com/watch?v=_gRM6hISrsA
+* mark lombardi
+* https://www.zeit.de/kultur/2018-06/bibis-beauty-palace-influencerin-bibi-heinicke-schwangerschaft-werbung/komplettansicht
+* https://de.statista.com/outlook/243/137/ecommerce/deutschland#market-revenue
+* http://www.hiwak.net/
+* http://yunchulkim.net/work/voidtraffic/
+* https://trends.google.de/trends/explore?date=all&q=big%20data,data%20science,data%20mining,data%20driven,data%20economy
+* https://www.youtube.com/watch?v=dD36IajCz6A
+* https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data
+* http://dataphys.org/list/electricity-power-demand/
+* https://vimeo.com/179412274
+* 
+
 [] Name
 [] Anmeldung
 [] Darstellungskonzept + Skizzen
@@ -95,3 +109,52 @@ Was sind Daten?
 * (Kanye's West Hype)[https://www.zeit.de/kultur/2018-06/bibis-beauty-palace-influencerin-bibi-heinicke-schwangerschaft-werbung/komplettansicht]
 *
 
+### Daten als Basis für AI
+
+Um die gewaltigen Mengen an anfallenden Daten nicht als Müll sondern ganz in ökonoimischer Linie als Asset zu begreifen braucht es Technik die diesen schnell verarbeiten bzw. klassifizieren können. Hier kommt AI bzw künstliche Intelligenz ins Spiel. Ohne die Ideologie die dieser Begriff impliziert jetzt zu genau aufzulösen zu wollen, sieht man hier ganz schön was sich in der Technologiegeschichte abzeichnet.
+
+Wir bauten Maschinen als mechanische Körpererweiterungen, um uns körperliche Arbeit zu erleichtern. Wir bauten Computer, als rationale Körperweiterungen, um uns kognitive Arbeit zu erleichtern. Mittlerweile leben wir innerhalb nach Regeln für diese Maschinen und Computer, die wir erfunden haben und adaptieren sie perfekt, dass wir vergessen haben, das wir es waren, die sie erfunden haben. Jetzt entwickeln wir Software, die mit den mechanischen und rationalen Körperweiterungen perfekt regelbasiert umgehen kann, so dass wir - perfekt an diese von uns selbst technisierte Welt angepasst - von dieser KI outperformt werden.
+
+Wir bauen Maschinen, nach deren Regeln wir uns anpassen und dann entwickeln wir Maschinen, die diese Regeln besser bespielen können als wir selbst. Ihr seid Räder im Getriebe der Maschine, die euch plattwalzt, Jeder Angriff wird zum Futter der Maschine, die euch glattwalzt, proklamiert die Band "Das Bierbeben".
+
+Wir versuchen selbst zu Robotern zu werden. Narziss
+
+### Die Maschine - die verteilte Maschine - Die Matrix
+
+``„But, once adopted into the production process of capital, the means of labor passes through different metamorphoses, whose culmination is the machine, or rather, an automatic system of machinery (system of machinery: the automatic one is merely its most complete, most adequate form, and alone transforms machinery into a system), set in motion by an automaton, a moving power that moves itself; this automaton consisting of numerous mechanical and intellectual organs, so that the workers themselves are cast merely as its conscious linkages.”``
+Karl Marx, Machine Fragment, 1957/1958
+
+Unsere Welt fliegt ohne Ziel im Kreis.
+
+Automatisierung und Beschleunigung. Mit der freiwerdenden Zeit durch Automatisierung wird momentan nur weiter Content konsumiert oder Devices gekauft, um den Content konsumieren zu können. Konzertkultur wird ersetzt durch Contentkultur. 
+
+When we overlap Machine and Human
+
+``„On the one side we have this "human thing" that behaves like a robot as much as possible and on the other side we have the machine/code that behaves as organic as possible. and if we overlap them in an artistic process, we don't see the redundancy and the weird things that we copied from each other. we see what's left, what we couldn't copy, that's what stand out more thant the things we copied. therefore we can find out what makes a human a human and a machine a machine.”``
+FIBER Festival 2017 - 'Moonwalk on Motherboards' by Christian ‘Mio’ Loclair
+
+What has cultural relevance?
+
+Art has to reflect culture it lives in.
+Culture has to reflect society it lives in.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bewusstsein
+Moral
