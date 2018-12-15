@@ -36,7 +36,7 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 long lastMsg = 0;
 char msg[50];
-int value = 0;
+int value = random(33,8000);
 
 void setup_wifi() {
 
@@ -124,7 +124,7 @@ void loop() {
   long now = millis();
   if (now - lastMsg > 2000) {
     lastMsg = now;
-    ++value;
+    //++value;
     snprintf (msg, 50, "hello world #%ld", value);
     Serial.print("Publish message: ");
     Serial.println(msg);
