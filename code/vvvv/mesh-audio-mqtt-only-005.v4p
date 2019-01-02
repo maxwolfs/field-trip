@@ -1,0 +1,1095 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="C:\dev\master-thesis\code\vvvv\mesh-audio-mqtt-only-005.v4p" scrollx="15" scrolly="45" systemname="mesh-audio-mqtt-only-005" filename="C:\vvvv\_sketches\mesh-audio-mqtt-only-005.v4p">
+   <BOUNDS type="Window" left="-165" top="0" width="15225" height="13725">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="38.0.0">
+   </PACK>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="51">
+   <BOUNDS type="Node" left="1155" top="12315" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1155" top="12315" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="14955" top="0" width="5415" height="5355">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Clear" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE id="36" componentmode="Hidden" systemname="Camera (Transform Softimage Legacy)" filename="%VVVV%\lib\nodes\modules\_legacy\Editing\Camera (Transform Softimage Legacy).v4p" nodename="Camera (Transform Softimage)">
+   <BOUNDS type="Window" left="4320" top="7140" width="17400" height="10605">
+   </BOUNDS>
+   <PIN pinname="Initial Interest" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Initial Distance" slicecount="1" values="50.01">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="0.09">
+   </PIN>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <BOUNDS type="Node" left="1440" top="11505" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Initial FOV" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Near Plane" slicecount="1" values="1E-005">
+   </PIN>
+   <PIN pinname="Far Plane" slicecount="1" values="152">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Evaluate" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="36" srcpinname="View" dstnodeid="51" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Projection" dstnodeid="51" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Osc (VAudio Source)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.Nodes.dll" nodename="Osc (VAudio Source)" componentmode="Hidden" id="81">
+   <BOUNDS type="Node" left="3660" top="9180" width="1200" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3660" top="9180" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Audio Out" visible="1">
+   </PIN>
+   <PIN pinname="FM Level" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Frequency" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Gain" slicecount="1" visible="1" values="0.25">
+   </PIN>
+   <PIN pinname="Frequency Offset" visible="1" slicecount="1" values="393">
+   </PIN>
+   <PIN pinname="Symmetry" slicecount="1" values="0.24">
+   </PIN>
+   <PIN pinname="Waveform" slicecount="1" visible="1" values="Sine">
+   </PIN>
+   <PIN pinname="Evaluate" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Anti-Aliasing Method" slicecount="1" values="EPTR">
+   </PIN>
+   <PIN pinname="FM" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="AudioOut (VAudio)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.Nodes.dll" nodename="AudioOut (VAudio)" componentmode="Hidden" id="83">
+   <BOUNDS type="Node" left="2565" top="9000" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2565" top="9000" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Channel Offset" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Evaluate" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AudioEngine (VAudio)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.Nodes.dll" nodename="AudioEngine (VAudio)" componentmode="Hidden" id="125">
+   <BOUNDS type="Node" left="7500" top="7230" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7500" top="7230" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Play" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Driver" slicecount="1" values="|ASIO4ALL v2|">
+   </PIN>
+   <PIN pinname="Desired Input Channels" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <PACK Name="vvvv-ZeroMQ" Version="0.5.7">
+   </PACK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="157" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7695" top="4395" width="495" height="465">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7695" top="4395" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Setup Connection|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="156" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="1035" top="5925" width="810" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1035" top="5925" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Input String" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="155" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="3600" top="5925" width="810" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3600" top="5925" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Input String" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Show Characters [#0..#32,#127]" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="154" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7170" top="2805" width="810" height="330">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7170" top="2805" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1883">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Port">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Queue (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (String)" componentmode="Hidden" id="153">
+   <BOUNDS type="Node" left="1035" top="6690" width="615" height="270">
+   </BOUNDS>
+   <PIN pinname="Frame Count" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Insert" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" visible="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="156" srcpinname="Output String" dstnodeid="153" dstpinname="Input">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="152">
+   <BOUNDS type="Node" left="1035" top="7215" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1035" top="7215" width="1650" height="1110">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="Input">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Topic">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="151">
+   <BOUNDS type="Node" left="3555" top="7335" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3555" top="7335" width="1380" height="345">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1" slicecount="0" values="||">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Show Characters [#0..#32,#127]" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Queue (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (String)" componentmode="Hidden" id="150">
+   <BOUNDS type="Node" left="3585" top="6750" width="615" height="270">
+   </BOUNDS>
+   <PIN pinname="Frame Count" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Insert" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" visible="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="155" srcpinname="Output String" dstnodeid="150" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Count (String)" nodename="Count (String)" componentmode="Hidden" id="149">
+   <BOUNDS type="Node" left="1215" top="6300" width="555" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="156" srcpinname="Output String" dstnodeid="149" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="149" srcpinname="Count" dstnodeid="153" dstpinname="Insert">
+   </LINK>
+   <NODE systemname="Count (String)" nodename="Count (String)" componentmode="Hidden" id="148">
+   <BOUNDS type="Node" left="3765" top="6345" width="555" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="155" srcpinname="Output String" dstnodeid="148" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="148" srcpinname="Count" dstnodeid="150" dstpinname="Insert">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="147" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="1050" top="1485" width="1095" height="285">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1050" top="1485" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="v4receive">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="v4Receiver">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="146" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="7560" top="5820" width="2730" height="900">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7560" top="5820" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="|09.11.2014 16:55:09: Trying to setup client to connect to broker: 172.40.2.50 at Port: 9000.&cr;&lf;09.11.2014 16:55:09: This might take a momment ... &cr;&lf;|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Connection Status|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="145" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="4095" top="2805" width="915" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4095" top="2805" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="3" values="QoS_1,QoS_1,QoS_2">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Qualiy of Service|">
+   </PIN>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="144">
+   <BOUNDS type="Node" left="5655" top="2805" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5655" top="2805" width="1305" height="345">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1" slicecount="1" values="localhost">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Broker adress|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="153" srcpinname="Output" dstnodeid="152" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="143">
+   <BOUNDS type="Node" left="1035" top="2100" width="615" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="E09D312F04E0">
+   </PIN>
+   <PIN pinname="Input 1" slicecount="1" visible="1" values="text">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="UnderScore">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="147" srcpinname="Output String" dstnodeid="143" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="142" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="1035" top="2805" width="1290" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1035" top="2805" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="v4Receiver">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="v4Receiver">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Output - ClientID|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="143" srcpinname="Output" dstnodeid="142" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="141" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6165" top="5955" width="495" height="465">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6165" top="5955" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Is Connected|">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="157" srcpinname="Y Output Value" dstnodeid="150" dstpinname="Reset" linkstyle="Bezier">
+   <LINKPOINT x="7910" y="5985">
+   </LINKPOINT>
+   <LINKPOINT x="3970" y="5610">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="157" srcpinname="Y Output Value" dstnodeid="153" dstpinname="Reset" linkstyle="Bezier">
+   <LINKPOINT x="7840" y="5955">
+   </LINKPOINT>
+   <LINKPOINT x="1490" y="5580">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="140" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4140" top="2010" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4140" top="2010" width="1785" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Unique String|">
+   </PIN>
+   </NODE>
+   <NODE systemname="MAC (Network)" nodename="MAC (Network)" componentmode="Hidden" id="139">
+   <BOUNDS type="Node" left="3825" top="1035" width="510" height="270">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (String)" nodename="GetSlice (String)" componentmode="Hidden" id="138">
+   <BOUNDS type="Node" left="3825" top="1320" width="690" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="139" srcpinname="Output" dstnodeid="138" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Substitute (String)" nodename="Substitute (String)" componentmode="Hidden" id="137">
+   <BOUNDS type="Node" left="3825" top="1605" width="795" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="From" slicecount="1" values=":">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="138" srcpinname="Output" dstnodeid="137" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="137" srcpinname="Output" dstnodeid="140" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="136">
+   <BOUNDS type="Node" left="2580" top="2505" width="765" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="135" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="2565" top="555" width="1035" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2565" top="555" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="hallo/">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="Input">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="135" srcpinname="Output String" dstnodeid="136" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="134" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="2730" top="1215" width="450" height="570">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2730" top="1215" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="3" values="welt,,">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="134" srcpinname="Output String" dstnodeid="136" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="133" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="2580" top="2895" width="1380" height="630">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2580" top="2895" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="3" visible="1" values="vvvv1_LQNJ,vvvv2_LQNJ,vvvv3_LQNJ">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Topic">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="136" srcpinname="Output" dstnodeid="133" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="132">
+   <BOUNDS type="Node" left="2310" top="4605" width="570" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="133" srcpinname="Output String" dstnodeid="132" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="131">
+   <BOUNDS type="Node" left="2805" top="4230" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2805" top="4230" width="810" height="240">
+   </BOUNDS>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" values="vvvv/1/#">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Output String" dstnodeid="132" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="130">
+   <BOUNDS type="Node" left="2310" top="3765" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2310" top="3765" width="495" height="465">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="130" srcpinname="Y Output Value" dstnodeid="132" dstpinname="Switch">
+   </LINK>
+   <NODE systemname="MQTT Receiver (Network beta 0.1)" filename="%VVVV%\packs\VVVV-MQTT\plugins\NetworkMQTT\NetworkMQTT.csproj" nodename="MQTT Receiver (Network beta 0.1)" componentmode="Hidden" id="129">
+   <BOUNDS type="Node" left="1050" top="5070" width="7740" height="270">
+   </BOUNDS>
+   <PIN pinname="ClientID" visible="1">
+   </PIN>
+   <PIN pinname="Topic" visible="1">
+   </PIN>
+   <PIN pinname="Qualiy of Service" visible="1">
+   </PIN>
+   <PIN pinname="Broker adress" visible="1">
+   </PIN>
+   <PIN pinname="Port" visible="1">
+   </PIN>
+   <PIN pinname="Setup Connection" visible="1">
+   </PIN>
+   <PIN pinname="Message" visible="1">
+   </PIN>
+   <PIN pinname="Is Connected" visible="1">
+   </PIN>
+   <PIN pinname="Connection Status" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="142" srcpinname="Output String" dstnodeid="129" dstpinname="ClientID">
+   </LINK>
+   <LINK srcnodeid="132" srcpinname="Output" dstnodeid="129" dstpinname="Topic">
+   </LINK>
+   <LINK srcnodeid="145" srcpinname="Output Enum" dstnodeid="129" dstpinname="Qualiy of Service">
+   </LINK>
+   <LINK srcnodeid="144" srcpinname="Output String" dstnodeid="129" dstpinname="Broker adress">
+   </LINK>
+   <LINK srcnodeid="154" srcpinname="Y Output Value" dstnodeid="129" dstpinname="Port">
+   </LINK>
+   <LINK srcnodeid="157" srcpinname="Y Output Value" dstnodeid="129" dstpinname="Setup Connection">
+   </LINK>
+   <LINK srcnodeid="129" srcpinname="Topic" dstnodeid="156" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="129" srcpinname="Message" dstnodeid="155" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="129" srcpinname="Is Connected" dstnodeid="141" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="129" srcpinname="Connection Status" dstnodeid="146" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="163">
+   <BOUNDS type="Node" left="3645" top="8040" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="151" srcpinname="Output String" dstnodeid="163" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="164" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3615" top="8430" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3615" top="8430" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="8414.20075806437">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="163" srcpinname="Output" dstnodeid="164" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="AudioOut (VAudio)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.Nodes.dll" nodename="AudioOut (VAudio)" componentmode="Hidden" id="183">
+   <BOUNDS type="Node" left="2535" top="9345" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2535" top="9345" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Channel Offset" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Evaluate" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="185">
+   <BOUNDS type="Node" left="3645" top="8790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" values="1024">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="2048">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="164" srcpinname="Y Output Value" dstnodeid="185" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="185" srcpinname="Output" dstnodeid="81" dstpinname="Frequency Offset">
+   </LINK>
+   <NODE systemname="MQTT Receiver (Network beta 0.1)" filename="%VVVV%\packs\VVVV-MQTT\plugins\NetworkMQTT\NetworkMQTT.csproj" nodename="MQTT Receiver (Network beta 0.1)" componentmode="Hidden" id="186">
+   <BOUNDS type="Node" left="5670" top="7560" width="1350" height="270">
+   </BOUNDS>
+   <PIN pinname="ClientID" visible="1" slicecount="1" values="v4Receiver2">
+   </PIN>
+   <PIN pinname="Topic" visible="1" slicecount="1" values="hallo/welt2">
+   </PIN>
+   <PIN pinname="Qualiy of Service" visible="1" slicecount="1" values="QoS_0">
+   </PIN>
+   <PIN pinname="Broker adress" visible="1" slicecount="1" values="localhost">
+   </PIN>
+   <PIN pinname="Port" visible="1" slicecount="1" values="1883">
+   </PIN>
+   <PIN pinname="Setup Connection" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Message" visible="1">
+   </PIN>
+   <PIN pinname="Is Connected" visible="1">
+   </PIN>
+   <PIN pinname="Connection Status" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="187">
+   <BOUNDS type="Node" left="6105" top="7905" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6105" top="7905" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1" slicecount="30" values=",,,,,,,,,,,,,,,,,,,,,,,,,,,,,">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="190">
+   <BOUNDS type="Node" left="6090" top="9360" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="74" values="512,514,513,513,513,512,513,513,513,513,513,512,513,513,513,513,513,512,513,513,513,512,512,513,513,513,513,513,513,513,513,513,513,513,511,513,513,513,513,513,513,512,512,513,513,513,512,513,514,511,513,513,513,513,512,513,513,513,513,513,513,513,513,512,513,514,512,513,513,513,513,513,513,513">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="189" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6015" top="9750" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6015" top="9750" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="8414.20075806437">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="190" srcpinname="Output" dstnodeid="189" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Osc (VAudio Source)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.Nodes.dll" nodename="Osc (VAudio Source)" componentmode="Hidden" id="192">
+   <BOUNDS type="Node" left="7155" top="10080" width="1200" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7155" top="10080" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Audio Out" visible="1">
+   </PIN>
+   <PIN pinname="FM Level" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Frequency" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Gain" slicecount="1" visible="1" values="0.25">
+   </PIN>
+   <PIN pinname="Frequency Offset" visible="1" slicecount="1" values="393">
+   </PIN>
+   <PIN pinname="Symmetry" slicecount="1" values="0.24">
+   </PIN>
+   <PIN pinname="Waveform" slicecount="1" visible="1" values="Sine">
+   </PIN>
+   <PIN pinname="Evaluate" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Anti-Aliasing Method" slicecount="1" values="EPTR">
+   </PIN>
+   <PIN pinname="FM" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="191">
+   <BOUNDS type="Node" left="6090" top="10080" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" values="1024">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="1024">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="191" srcpinname="Output" dstnodeid="192" dstpinname="Frequency Offset">
+   </LINK>
+   <LINK srcnodeid="189" srcpinname="Y Output Value" dstnodeid="191" dstpinname="Input">
+   </LINK>
+   <NODE id="194" systemname="AudioOut (VAudio)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.Nodes.dll" nodename="AudioOut (VAudio)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Input" visible="1" pintype="Input">
+   </PIN>
+   <BOUNDS type="Node" left="4710" top="10800" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4710" top="10800" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Channel Offset" slicecount="1" visible="1" pintype="Input" values="0">
+   </PIN>
+   <PIN pinname="Evaluate" slicecount="1" pintype="Input" visible="-1" values="1">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="193" systemname="AudioOut (VAudio)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.Nodes.dll" nodename="AudioOut (VAudio)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Input" visible="1" pintype="Input">
+   </PIN>
+   <BOUNDS type="Node" left="4710" top="10455" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4710" top="10455" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Channel Offset" slicecount="1" visible="1" pintype="Input" values="1">
+   </PIN>
+   <PIN pinname="Evaluate" slicecount="1" pintype="Input" visible="-1" values="1">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Text (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\text\VVVV.DX11.Nodes.Text.dll" nodename="Text (DX11.Layer)" componentmode="Hidden" id="201">
+   <BOUNDS type="Node" left="3375" top="11850" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3375" top="11850" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="String" visible="1" slicecount="1" values="512">
+   </PIN>
+   <PIN pinname="Size" visible="1" slicecount="1" values="72">
+   </PIN>
+   <PIN pinname="Horizontal Align" slicecount="1" values="Left">
+   </PIN>
+   <PIN pinname="Vertical Align" slicecount="1" values="Top">
+   </PIN>
+   <PIN pinname="Normalize" slicecount="1" values="Both">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="Consolas">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="206">
+   <BOUNDS type="Node" left="4560" top="12375" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4560" top="12375" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="208">
+   <BOUNDS type="Node" left="3660" top="11475" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="TranslateX" slicecount="1" values="-0.75">
+   </PIN>
+   <PIN pinname="Rotate" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="CenterX" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="TranslateY" slicecount="1" values="0.9">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="208" srcpinname="Transform Out" dstnodeid="201" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Queue (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (String)" componentmode="Hidden" id="210">
+   <BOUNDS type="Node" left="6060" top="8685" width="615" height="270">
+   </BOUNDS>
+   <PIN pinname="Frame Count" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Insert" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" visible="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Count (String)" nodename="Count (String)" componentmode="Hidden" id="209">
+   <BOUNDS type="Node" left="6240" top="8295" width="555" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="209" srcpinname="Count" dstnodeid="210" dstpinname="Insert">
+   </LINK>
+   <LINK srcnodeid="186" srcpinname="Message" dstnodeid="187" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="187" srcpinname="Output String" dstnodeid="210" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="187" srcpinname="Output String" dstnodeid="209" dstpinname="Input">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="212">
+   <BOUNDS type="Node" left="6045" top="9030" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6045" top="9030" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="210" srcpinname="Output" dstnodeid="212" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="212" srcpinname="Output String" dstnodeid="190" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="206" srcpinname="Layer Out" dstnodeid="51" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Text (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\text\VVVV.DX11.Nodes.Text.dll" nodename="Text (DX11.Layer)" componentmode="Hidden" id="214">
+   <BOUNDS type="Node" left="5670" top="11790" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5670" top="11790" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="String" visible="1" slicecount="1" values="512">
+   </PIN>
+   <PIN pinname="Size" visible="1" slicecount="1" values="72">
+   </PIN>
+   <PIN pinname="Horizontal Align" slicecount="1" values="Right">
+   </PIN>
+   <PIN pinname="Vertical Align" slicecount="1" values="Top">
+   </PIN>
+   <PIN pinname="Normalize" slicecount="1" values="Both">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="Consolas">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="213">
+   <BOUNDS type="Node" left="5970" top="11460" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="TranslateX" slicecount="1" values="0.74">
+   </PIN>
+   <PIN pinname="Rotate" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="CenterX" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="TranslateY" slicecount="1" values="0.91">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="213" srcpinname="Transform Out" dstnodeid="214" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="212" srcpinname="Output String" dstnodeid="214" dstpinname="String">
+   </LINK>
+   <LINK srcnodeid="214" srcpinname="Layer" dstnodeid="206" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="201" srcpinname="Layer" dstnodeid="206" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="151" srcpinname="Output String" dstnodeid="201" dstpinname="String">
+   </LINK>
+   <LINK srcnodeid="150" srcpinname="Output" dstnodeid="151" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Switch (Node Output)" nodename="Switch (Node Output)" componentmode="Hidden" id="215">
+   <BOUNDS type="Node" left="3675" top="9765" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Switch (Node Output)" nodename="Switch (Node Output)" componentmode="Hidden" id="216">
+   <BOUNDS type="Node" left="5910" top="10845" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="215" srcpinname="Output 1" dstnodeid="183" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="215" srcpinname="Output 1" dstnodeid="83" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="217">
+   <BOUNDS type="Box" left="4980" top="9405" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4980" top="9405" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="217" srcpinname="Y Output Value" dstnodeid="215" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="216" srcpinname="Output 1" dstnodeid="193" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="218">
+   <BOUNDS type="Box" left="6540" top="10830" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6540" top="10830" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="218" srcpinname="Y Output Value" dstnodeid="216" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="216" srcpinname="Output 1" dstnodeid="194" dstpinname="Input">
+   </LINK>
+   <NODE systemname="VSTHost (VAudio Source)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.VST.dll" nodename="VSTHost (VAudio Source)" componentmode="InAWindow" id="219">
+   <BOUNDS type="Node" left="7170" top="10410" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7170" top="10410" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Audio Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" values="|..\..\..\..\vst\x64\Absynth 5 FX.dll|">
+   </PIN>
+   <PIN pinname="Safe Data" slicecount="1" values="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">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="0" width="14010" height="4500">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="192" srcpinname="Audio Out" dstnodeid="219" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="219" srcpinname="Audio Out" dstnodeid="216" dstpinname="Input">
+   </LINK>
+   <NODE systemname="VSTHost (VAudio Source)" filename="%VVVV%\packs\VVVV.Audio\nodes\plugins\VVVV.Audio.VST.dll" nodename="VSTHost (VAudio Source)" componentmode="InAWindow" id="220">
+   <BOUNDS type="Node" left="4635" top="10080" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4635" top="10080" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Audio Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" values="|..\..\..\..\vst\x64\Absynth 5 FX.dll|">
+   </PIN>
+   <PIN pinname="Safe Data" slicecount="1" values="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">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="0" width="14010" height="4500">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="81" srcpinname="Audio Out" dstnodeid="220" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="220" srcpinname="Audio Out" dstnodeid="215" dstpinname="Input">
+   </LINK>
+   </PATCH>
