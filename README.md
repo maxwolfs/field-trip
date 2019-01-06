@@ -17,11 +17,19 @@ exhibiton setup / raumgestaltung: a grid of 5x5 modules hanging from the ceiling
 
 ![first exhibiton](img/v4.png)
 
+module drawing
+
+![modulzeichnung](img/led-modul-v1.png)
+
+animation
+
+![modulzeichnung](img/lightSim.gif)
+
 ---
 
 #### Update: 05.01.2019
 
-datastream received in vvvv is converted and send via OSC to max4live / ableton to control reaktor. visuals / projector skipped.
+datastream received in vvvv is converted and send via OSC to max4live / ableton to control reaktor. visuals / projector skipped
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/4IOjiSdKVcM/0.jpg)](http://www.youtube.com/watch?v=4IOjiSdKVcM)
 
@@ -29,7 +37,7 @@ datastream received in vvvv is converted and send via OSC to max4live / ableton 
 
 #### Update: 03.01.2019
 
-two esp8266 with LDR sensors on A0 pushing values with refresh rate of 50Hz in real-time via mqtt to broker in vvvv where values are feeding two sine wave oscillators.
+two esp8266 with LDR sensors on A0 pushing values with refresh rate of 50Hz in real-time via mqtt to broker in vvvv where values are feeding two sine wave oscillators
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Ge2v8ilafCE/0.jpg)](http://www.youtube.com/watch?v=Ge2v8ilafCE)
 
