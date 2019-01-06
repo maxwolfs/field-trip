@@ -23,7 +23,7 @@ exhibiton setup / raumgestaltung: a grid of 5x5 modules hanging from the ceiling
 
 datastream received in vvvv is converted and send via OSC to max4live / ableton to control reaktor. visuals / projector skipped.
 
-[![fourth sketch in vvvv](img/005.jpg)](https://photos.app.goo.gl/bBgj2VqPv8NFTbhs7)
+<a href="https://photos.app.goo.gl/bBgj2VqPv8NFTbhs7" target="_blank"><img src="img/005.jpg)" /></a>
 
 ---
 
@@ -31,7 +31,7 @@ datastream received in vvvv is converted and send via OSC to max4live / ableton 
 
 two esp8266 with LDR sensors on A0 pushing values with refresh rate of 50Hz in real-time via mqtt to broker in vvvv where values are feeding two sine wave oscillators.
 
-[![fourth sketch in vvvv](img/004.jpg)](https://photos.app.goo.gl/AGvyUPVZidcn5s6v9)
+<a href="https://photos.app.goo.gl/AGvyUPVZidcn5s6v9" target="_blank"><img src="img/005.jpg)" /></a>
 
 ---
 
