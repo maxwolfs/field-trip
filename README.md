@@ -15,7 +15,7 @@ exhibiton setup / raumgestaltung: a grid of 5x5 modules hanging from the ceiling
 - mosfet
 - ldr sensor
 
-![first exhibiton](img/exhibition-setup-v5.png)
+![first exhibiton](img/v4.png)
 
 ---
 
