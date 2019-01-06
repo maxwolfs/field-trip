@@ -19,7 +19,7 @@ exhibiton setup / raumgestaltung: a grid of 5x5 modules hanging from the ceiling
 
 module drawing
 
-![modulzeichnung](img/led-modul-v1.png =450x)
+![modulzeichnung](img/led-modul-v1.png)
 
 animation
 
